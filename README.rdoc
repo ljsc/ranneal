@@ -1,17 +1,29 @@
-= ranneal
+= RAnneal
 
-Description goes here.
+RAnneal is a very simple implementation of Simulated Annealing (SA) in ruby. It
+is code for a class project explaining the algorithm's use for graph
+optimization problems.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Running
+
+Since some of the intended users may not be regular ruby users, here are the
+steps needed to run the code:
+
+* Make sure that ruby is installed. Some systems (i.e.: Mac OSX) will already
+  have ruby, but if not you can download and find the directions to install here
+  http://www.ruby-lang.org/en/downloads/
+
+* Install ruby's package manager if you want to run the unit tests. http://docs.rubygems.org/
+
+* Github provides links to download an archive of the code above (as either a
+  zip or tarball). Or if you have git installed you can clone the repository.
+
+* Finally, the example from the paper can be executed by running the script in
+  bin/mkschart. You can install the ranneal gem and then it will be installed on
+  the system, but the easiest way to do it is just run it from the source
+  directory:
+
+  ruby -Ilib bin/mkschart
 
 == Copyright
 

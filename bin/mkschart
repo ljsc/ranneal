@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'ranneal'
+require 'ranneal/examples/seating'
+require 'pp'
+
+input_file = File.join(RAnneal::BASEDIR, 'data', 'guests.txt')
+
+manager = SeatingManager.new(input_file)
+manager.seat_guests
+
+puts "Starting cost: #{manager.cost}"
+
+File.open('random.tex', 'w') do |randout|
+  randout.puts manager.chart_to_tex
+  randout.puts manager.cost
+end
+
+annealer = RAnneal.new(manager, :initial_temp => 200)
+annealer.debug = true
+annealer.run
+
+puts "Ending cost: #{manager.cost}"
+
+pp manager.guests
+
+File.open('annealed.tex', 'w') do |anout|
+  anout.puts manager.chart_to_tex
+  anout.puts manager.cost
+end
+

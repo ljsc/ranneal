@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes.multipart,fit}
+\begin{document}
+
+\begin{tikzpicture}[scale=0.85,
+                    every node/.style={circle split,
+                    minimum width=1.65cm,font=\footnotesize}]
+
+  \path (0,0) -- (18:2) node [draw]  (t1s1) {<%=t1s1.name%> \nodepart{lower}$<%=t1s1.age%> \; (<%=t1s1.party%>)$};
+  \path (0,0) -- (90:2) node [draw]  (t1s2) {<%=t1s2.name%> \nodepart{lower}$<%=t1s2.age%> \; (<%=t1s2.party%>)$};
+  \path (0,0) -- (162:2) node [draw] (t1s3) {<%=t1s3.name%> \nodepart{lower}$<%=t1s3.age%> \; (<%=t1s3.party%>)$};
+  \path (0,0) -- (234:2) node [draw] (t1s4) {<%=t1s4.name%> \nodepart{lower}$<%=t1s4.age%> \; (<%=t1s4.party%>)$};
+  \path (0,0) -- (306:2) node [draw] (t1s0) {<%=t1s0.name%> \nodepart{lower}$<%=t1s0.age%> \; (<%=t1s0.party%>)$};
+
+  \begin{scope}[xshift=7cm]
+  \path (0,0) -- (18:2) node [draw]  (t2s2) {<%=t2s2.name%> \nodepart{lower}$<%=t2s2.age%> \; (<%=t2s2.party%>)$};
+  \path (0,0) -- (90:2) node [draw]  (t2s3) {<%=t2s3.name%> \nodepart{lower}$<%=t2s3.age%> \; (<%=t2s3.party%>)$};
+  \path (0,0) -- (162:2) node [draw] (t2s4) {<%=t2s4.name%> \nodepart{lower}$<%=t2s4.age%> \; (<%=t2s4.party%>)$};
+  \path (0,0) -- (234:2) node [draw] (t2s0) {<%=t2s0.name%> \nodepart{lower}$<%=t2s0.age%> \; (<%=t2s0.party%>)$};
+  \path (0,0) -- (306:2) node [draw] (t2s1) {<%=t2s1.name%> \nodepart{lower}$<%=t2s1.age%> \; (<%=t2s1.party%>)$};
+  \end{scope}
+
+  \begin{scope}[xshift=3.5cm,yshift=-6.5cm]
+  \path (0,0) -- (18:2) node [draw]  (t3s4) {<%=t3s4.name%> \nodepart{lower}$<%=t3s4.age%> \; (<%=t3s4.party%>)$};
+  \path (0,0) -- (90:2) node [draw]  (t3s0) {<%=t3s0.name%> \nodepart{lower}$<%=t3s0.age%> \; (<%=t3s0.party%>)$};
+  \path (0,0) -- (162:2) node [draw] (t3s1) {<%=t3s1.name%> \nodepart{lower}$<%=t3s1.age%> \; (<%=t3s1.party%>)$};
+  \path (0,0) -- (234:2) node [draw] (t3s2) {<%=t3s2.name%> \nodepart{lower}$<%=t3s2.age%> \; (<%=t3s2.party%>)$};
+  \path (0,0) -- (306:2) node [draw] (t3s3) {<%=t3s3.name%> \nodepart{lower}$<%=t3s3.age%> \; (<%=t3s3.party%>)$};
+  \end{scope}
+
+  \draw (t1s1) -- (t1s2) -- (t1s3) -- (t1s4) -- (t1s0) -- (t1s1);
+  \draw (t2s1) -- (t2s2) -- (t2s3) -- (t2s4) -- (t2s0) -- (t2s1);
+  \draw (t3s1) -- (t3s2) -- (t3s3) -- (t3s4) -- (t3s0) -- (t3s1);
+
+  \draw (t1s0) .. controls (3.5,-0.75) ..
+        (t2s0) .. controls (5,-3.25)   ..
+        (t3s0) .. controls (2,-3.25)   .. (t1s0);
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,15 @@
+Jacob,17,G
+Michael,70,G
+Ethan,58,B
+Joshua,50,G
+Daniel,47,G
+Alexander,32,B
+Anthony,46,B
+Emma,79,G
+Isabella,24,G
+Emily,21,G
+Madison,17,G
+Ava,72,B
+Olivia,39,G
+Sophia,65,G
+Abigail,71,G

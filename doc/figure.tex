@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes.multipart,fit}
+\begin{document}
+
+\begin{tikzpicture}[scale=0.85,
+                    every node/.style={circle split,
+                    minimum width=1.65cm,font=\footnotesize}]
+
+  \path (0,0) -- (18:2) node [draw]  (t1s1) {Daniel \nodepart{lower}$47 \; (G)$};
+  \path (0,0) -- (90:2) node [draw]  (t1s2) {Anthony \nodepart{lower}$46 \; (G)$};
+  \path (0,0) -- (162:2) node [draw] (t1s3) {Alex \nodepart{lower} $32 \; (B)$};
+  \path (0,0) -- (234:2) node [draw] (t1s4) {Ava \nodepart{lower} $72 \; (B)$};
+  \path (0,0) -- (306:2) node [draw] (t1s0) {Ethan \nodepart{lower}$58 \; (B)$};
+
+  \begin{scope}[xshift=7cm]
+  \path (0,0) -- (18:2) node [draw]  (t2s2) {Michael \nodepart{lower}$70 \; (G)$};
+  \path (0,0) -- (90:2) node [draw]  (t2s3) {Abigail \nodepart{lower}$71 \; (G)$};
+  \path (0,0) -- (162:2) node [draw] (t2s4) {Emma \nodepart{lower} $79 \; (G)$};
+  \path (0,0) -- (234:2) node [draw] (t2s0) {Joshua \nodepart{lower}$50 \; (G)$};
+  \path (0,0) -- (306:2) node [draw] (t2s1) {Sophia \nodepart{lower}$65 \; (G)$};
+  \end{scope}
+
+  \begin{scope}[xshift=3.5cm,yshift=-6.5cm]
+  \path (0,0) -- (18:2) node [draw]  (t3s4) {Isabella \nodepart{lower}$24 \; (G)$};
+  \path (0,0) -- (90:2) node [draw]  (t3s0) {Olivia \nodepart{lower}$39 \; (G)$};
+  \path (0,0) -- (162:2) node [draw] (t3s1) {Jacob \nodepart{lower} $17 \; (G)$};
+  \path (0,0) -- (234:2) node [draw] (t3s2) {Madison \nodepart{lower}$17 \; (G)$};
+  \path (0,0) -- (306:2) node [draw] (t3s3) {Emily \nodepart{lower}$21 \; (G)$};
+  \end{scope}
+
+  \draw (t1s1) -- (t1s2) -- (t1s3) -- (t1s4) -- (t1s0) -- (t1s1);
+  \draw (t2s1) -- (t2s2) -- (t2s3) -- (t2s4) -- (t2s0) -- (t2s1);
+  \draw (t3s1) -- (t3s2) -- (t3s3) -- (t3s4) -- (t3s0) -- (t3s1);
+
+  \draw (t1s0) .. controls (3.5,-0.75) ..
+        (t2s0) .. controls (5,-3.25)   ..
+        (t3s0) .. controls (2,-3.25)   .. (t1s0);
+
+\end{tikzpicture}
+
+\end{document}
